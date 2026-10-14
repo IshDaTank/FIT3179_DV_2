@@ -1,0 +1,350 @@
+{
+  "background": null,
+  "config": {
+    "font": "DM Sans",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#58727b",
+      "titleColor": "#47656c",
+      "gridColor": "#e8eeee",
+      "domain": false,
+      "tickColor": "#dbe5e4",
+      "labelFontSize": 11,
+      "titleFontSize": 11
+    },
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#59757c",
+      "titleColor": "#486c73"
+    },
+    "text": {
+      "font": "DM Sans"
+    },
+    "range": {
+      "category": [
+        "#187d89",
+        "#e7a078",
+        "#55a6a2",
+        "#9a94c5",
+        "#ba728d"
+      ]
+    }
+  },
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "height": 280,
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "spacing": 35,
+  "hconcat": [
+    {
+      "title": {
+        "text": "National reserves",
+        "anchor": "start",
+        "fontSize": 13,
+        "color": "#214851"
+      },
+      "width": 285,
+      "height": 225,
+      "data": {
+        "values": [
+          {
+            "state": "NSW",
+            "kind": "National reserves",
+            "n": 11
+          },
+          {
+            "state": "WA",
+            "kind": "National reserves",
+            "n": 3
+          },
+          {
+            "state": "QLD",
+            "kind": "National reserves",
+            "n": 2
+          },
+          {
+            "state": "SA",
+            "kind": "National reserves",
+            "n": 2
+          },
+          {
+            "state": "VIC",
+            "kind": "National reserves",
+            "n": 1
+          },
+          {
+            "state": "NSW",
+            "kind": "2026 tour stops",
+            "n": 0
+          },
+          {
+            "state": "WA",
+            "kind": "2026 tour stops",
+            "n": 1
+          },
+          {
+            "state": "QLD",
+            "kind": "2026 tour stops",
+            "n": 1
+          },
+          {
+            "state": "SA",
+            "kind": "2026 tour stops",
+            "n": 0
+          },
+          {
+            "state": "VIC",
+            "kind": "2026 tour stops",
+            "n": 1
+          }
+        ]
+      },
+      "transform": [
+        {
+          "filter": "datum.kind === 'National reserves'"
+        }
+      ],
+      "layer": [
+        {
+          "mark": {
+            "type": "bar",
+            "cornerRadiusEnd": 3,
+            "color": "#157c88"
+          },
+          "encoding": {
+            "y": {
+              "field": "state",
+              "type": "nominal",
+              "sort": [
+                "NSW",
+                "WA",
+                "QLD",
+                "SA",
+                "VIC"
+              ],
+              "axis": {
+                "title": null,
+                "labelLimit": 80
+              }
+            },
+            "x": {
+              "field": "n",
+              "type": "quantitative",
+              "scale": {
+                "domain": [
+                  0,
+                  12
+                ]
+              },
+              "axis": {
+                "title": "Locations",
+                "tickMinStep": 1
+              }
+            },
+            "tooltip": [
+              {
+                "field": "state"
+              },
+              {
+                "field": "n",
+                "title": "Count"
+              }
+            ]
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": 5,
+            "color": "#234e56",
+            "fontSize": 11,
+            "fontWeight": 700
+          },
+          "encoding": {
+            "y": {
+              "field": "state",
+              "type": "nominal",
+              "sort": [
+                "NSW",
+                "WA",
+                "QLD",
+                "SA",
+                "VIC"
+              ]
+            },
+            "x": {
+              "field": "n",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "n",
+              "type": "quantitative"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "text": "Announced tour stops",
+        "anchor": "start",
+        "fontSize": 13,
+        "color": "#214851"
+      },
+      "width": 285,
+      "height": 225,
+      "data": {
+        "values": [
+          {
+            "state": "NSW",
+            "kind": "National reserves",
+            "n": 11
+          },
+          {
+            "state": "WA",
+            "kind": "National reserves",
+            "n": 3
+          },
+          {
+            "state": "QLD",
+            "kind": "National reserves",
+            "n": 2
+          },
+          {
+            "state": "SA",
+            "kind": "National reserves",
+            "n": 2
+          },
+          {
+            "state": "VIC",
+            "kind": "National reserves",
+            "n": 1
+          },
+          {
+            "state": "NSW",
+            "kind": "2026 tour stops",
+            "n": 0
+          },
+          {
+            "state": "WA",
+            "kind": "2026 tour stops",
+            "n": 1
+          },
+          {
+            "state": "QLD",
+            "kind": "2026 tour stops",
+            "n": 1
+          },
+          {
+            "state": "SA",
+            "kind": "2026 tour stops",
+            "n": 0
+          },
+          {
+            "state": "VIC",
+            "kind": "2026 tour stops",
+            "n": 1
+          }
+        ]
+      },
+      "transform": [
+        {
+          "filter": "datum.kind === '2026 tour stops'"
+        }
+      ],
+      "layer": [
+        {
+          "mark": {
+            "type": "bar",
+            "cornerRadiusEnd": 3,
+            "color": "#dd8768"
+          },
+          "encoding": {
+            "y": {
+              "field": "state",
+              "type": "nominal",
+              "sort": [
+                "NSW",
+                "WA",
+                "QLD",
+                "SA",
+                "VIC"
+              ],
+              "axis": {
+                "title": null,
+                "labelLimit": 80
+              }
+            },
+            "x": {
+              "field": "n",
+              "type": "quantitative",
+              "scale": {
+                "domain": [
+                  0,
+                  2
+                ]
+              },
+              "axis": {
+                "title": "Locations",
+                "tickMinStep": 1
+              }
+            },
+            "tooltip": [
+              {
+                "field": "state"
+              },
+              {
+                "field": "n",
+                "title": "Count"
+              }
+            ]
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": 5,
+            "color": "#234e56",
+            "fontSize": 11,
+            "fontWeight": 700
+          },
+          "encoding": {
+            "y": {
+              "field": "state",
+              "type": "nominal",
+              "sort": [
+                "NSW",
+                "WA",
+                "QLD",
+                "SA",
+                "VIC"
+              ]
+            },
+            "x": {
+              "field": "n",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "n",
+              "type": "quantitative"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "resolve": {
+    "scale": {
+      "x": "independent"
+    }
+  }
+}

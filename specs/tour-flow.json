@@ -1,0 +1,192 @@
+{
+  "background": null,
+  "config": {
+    "font": "DM Sans",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#58727b",
+      "titleColor": "#47656c",
+      "gridColor": "#e8eeee",
+      "domain": false,
+      "tickColor": "#dbe5e4",
+      "labelFontSize": 11,
+      "titleFontSize": 11
+    },
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#59757c",
+      "titleColor": "#486c73",
+      "orient": "bottom"
+    },
+    "text": {
+      "font": "DM Sans"
+    },
+    "range": {
+      "category": [
+        "#187d89",
+        "#e7a078",
+        "#55a6a2",
+        "#9a94c5",
+        "#ba728d"
+      ]
+    }
+  },
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "height": 430,
+  "projection": {
+    "type": "mercator",
+    "center": [
+      133,
+      -27
+    ],
+    "scale": 610
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.id == '036' || datum.id == 36"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": "#dbe8e5",
+        "stroke": "#9cb5b6",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "data": {
+        "url": "data/tour.csv"
+      },
+      "mark": {
+        "type": "line",
+        "stroke": "#df8567",
+        "strokeWidth": 2.2,
+        "strokeDash": [
+          6,
+          4
+        ]
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "order": {
+          "field": "stop",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/tour.csv"
+      },
+      "mark": {
+        "type": "circle",
+        "color": "#157c88",
+        "stroke": "white",
+        "strokeWidth": 2,
+        "size": 350
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "venue"
+          },
+          {
+            "field": "state"
+          },
+          {
+            "field": "start"
+          },
+          {
+            "field": "end"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/tour.csv"
+      },
+      "mark": {
+        "type": "text",
+        "fontWeight": 800,
+        "fontSize": 13,
+        "color": "white"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "stop",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/tour.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.stop > 1"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "text": "➜",
+        "color": "#cf7656",
+        "fontSize": 18,
+        "dx": 18,
+        "dy": -15
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        }
+      }
+    }
+  ],
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json"
+}

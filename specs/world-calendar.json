@@ -1,0 +1,131 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "background": null,
+  "config": {
+    "font": "DM Sans",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#58727b",
+      "titleColor": "#47656c",
+      "gridColor": "#e8eeee",
+      "domain": false,
+      "tickColor": "#dbe5e4",
+      "labelFontSize": 11,
+      "titleFontSize": 11
+    },
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#59757c",
+      "titleColor": "#486c73",
+      "orient": "bottom"
+    },
+    "text": {
+      "font": "DM Sans"
+    },
+    "range": {
+      "category": [
+        "#187d89",
+        "#e7a078",
+        "#55a6a2",
+        "#9a94c5",
+        "#ba728d"
+      ]
+    }
+  },
+  "height": 300,
+  "data": {
+    "url": "data/world_tour_announced_2026.csv"
+  },
+  "transform": [
+    {
+      "calculate": "month(toDate(datum.start)) + 1",
+      "as": "monthNumber"
+    },
+    {
+      "calculate": "timeFormat(toDate(datum.start), \"%b\")",
+      "as": "monthLabel"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "cornerRadius": 3,
+        "stroke": "#ffffff",
+        "strokeWidth": 3
+      },
+      "encoding": {
+        "x": {
+          "field": "stop",
+          "type": "ordinal",
+          "title": "Announced tour stop (1–12)",
+          "axis": {
+            "labelAngle": 0
+          }
+        },
+        "y": {
+          "field": "monthNumber",
+          "type": "ordinal",
+          "title": "Month of announced start",
+          "sort": "ascending",
+          "axis": {
+            "labelExpr": "[\"Jan\",\"Feb\",\"Mar\",\"Apr\",\"May\",\"Jun\",\"Jul\",\"Aug\",\"Sep\",\"Oct\",\"Nov\",\"Dec\"][datum.value - 1]"
+          }
+        },
+        "color": {
+          "condition": {
+            "test": "datum.country === \"Australia\"",
+            "value": "#d66f52"
+          },
+          "value": "#177c88"
+        },
+        "tooltip": [
+          {
+            "field": "venue",
+            "title": "Event venue"
+          },
+          {
+            "field": "country",
+            "title": "Country"
+          },
+          {
+            "field": "start",
+            "title": "Announced start"
+          },
+          {
+            "field": "end",
+            "title": "Announced end"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontWeight": "bold",
+        "fontSize": 10,
+        "fill": "white"
+      },
+      "encoding": {
+        "x": {
+          "field": "stop",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "monthNumber",
+          "type": "ordinal",
+          "sort": "ascending"
+        },
+        "text": {
+          "field": "stop",
+          "type": "ordinal"
+        }
+      }
+    }
+  ]
+}

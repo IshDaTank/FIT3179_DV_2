@@ -1,0 +1,13 @@
+stop,venue,country,continent,start,end,longitude,latitude
+1,Bells Beach,Australia,Oceania,2026-04-01,2026-04-11,144.28,-38.37
+2,Margaret River,Australia,Oceania,2026-04-17,2026-04-27,114.99,-33.98
+3,Snapper Rocks,Australia,Oceania,2026-05-02,2026-05-12,153.55,-28.16
+4,Punta Roca,El Salvador,North America,2026-05-28,2026-06-07,-89.31,13.49
+5,Saquarema,Brazil,South America,2026-06-12,2026-06-20,-42.5,-22.93
+6,Jeffreys Bay,South Africa,Africa,2026-07-10,2026-07-20,24.92,-34.05
+7,Teahupoo,French Polynesia,Oceania,2026-08-08,2026-08-18,-149.27,-17.85
+8,Cloudbreak,Fiji,Oceania,2026-08-25,2026-09-04,177.19,-17.85
+9,Lower Trestles,United States,North America,2026-09-11,2026-09-20,-117.59,33.38
+10,Surf Abu Dhabi,United Arab Emirates,Asia,2026-10-14,2026-10-18,54.36,24.52
+11,Peniche,Portugal,Europe,2026-10-22,2026-11-01,-9.38,39.36
+12,Banzai Pipeline,United States,North America,2026-12-08,2026-12-20,-158.06,21.66

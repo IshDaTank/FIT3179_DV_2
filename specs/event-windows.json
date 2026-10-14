@@ -1,0 +1,120 @@
+{
+  "background": null,
+  "config": {
+    "font": "DM Sans",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#58727b",
+      "titleColor": "#47656c",
+      "gridColor": "#e8eeee",
+      "domain": false,
+      "tickColor": "#dbe5e4",
+      "labelFontSize": 11,
+      "titleFontSize": 11
+    },
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#59757c",
+      "titleColor": "#486c73"
+    },
+    "text": {
+      "font": "DM Sans"
+    },
+    "range": {
+      "category": [
+        "#187d89",
+        "#e7a078",
+        "#55a6a2",
+        "#9a94c5",
+        "#ba728d"
+      ]
+    }
+  },
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "height": 270,
+  "data": {
+    "url": "data/tour.csv"
+  },
+  "transform": [
+    {
+      "calculate": "toDate(datum.start)",
+      "as": "s"
+    },
+    {
+      "calculate": "toDate(datum.end)",
+      "as": "e"
+    }
+  ],
+  "mark": {
+    "type": "bar",
+    "cornerRadius": 4,
+    "size": 26
+  },
+  "encoding": {
+    "x": {
+      "field": "s",
+      "type": "temporal",
+      "axis": {
+        "title": "2026 (announced event windows)",
+        "format": "%d %b",
+        "labelAngle": -40
+      }
+    },
+    "x2": {
+      "field": "e"
+    },
+    "y": {
+      "field": "venue",
+      "type": "nominal",
+      "sort": {
+        "field": "stop",
+        "order": "ascending"
+      },
+      "axis": {
+        "title": null,
+        "labelLimit": 120
+      }
+    },
+    "color": {
+      "field": "state",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "NSW",
+          "WA",
+          "QLD",
+          "SA",
+          "VIC"
+        ],
+        "range": [
+          "#187d89",
+          "#e7a078",
+          "#55a6a2",
+          "#9a94c5",
+          "#ba728d"
+        ]
+      },
+      "legend": null
+    },
+    "tooltip": [
+      {
+        "field": "venue"
+      },
+      {
+        "field": "start"
+      },
+      {
+        "field": "end"
+      }
+    ]
+  },
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json"
+}

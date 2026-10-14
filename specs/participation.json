@@ -1,0 +1,148 @@
+{
+  "background": null,
+  "config": {
+    "font": "DM Sans",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#58727b",
+      "titleColor": "#47656c",
+      "gridColor": "#e8eeee",
+      "domain": false,
+      "tickColor": "#dbe5e4",
+      "labelFontSize": 11,
+      "titleFontSize": 11
+    },
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#59757c",
+      "titleColor": "#486c73"
+    },
+    "text": {
+      "font": "DM Sans"
+    },
+    "range": {
+      "category": [
+        "#187d89",
+        "#e7a078",
+        "#55a6a2",
+        "#9a94c5",
+        "#ba728d"
+      ]
+    }
+  },
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "height": 185,
+  "data": {
+    "url": "data/participation_2025.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "cornerRadiusEnd": 4,
+        "height": 32
+      },
+      "encoding": {
+        "y": {
+          "field": "group",
+          "type": "nominal",
+          "sort": [
+            "Women",
+            "Men"
+          ],
+          "axis": {
+            "title": null,
+            "labelFontWeight": 700,
+            "labelFontSize": 13
+          }
+        },
+        "x": {
+          "field": "participants",
+          "type": "quantitative",
+          "axis": {
+            "title": "Estimated people aged 15+ (2025)",
+            "format": "~s",
+            "tickCount": 5
+          },
+          "scale": {
+            "domain": [
+              0,
+              230000
+            ]
+          }
+        },
+        "color": {
+          "field": "group",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Women",
+              "Men"
+            ],
+            "range": [
+              "#187d89",
+              "#e7a078"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "group",
+            "title": "Group"
+          },
+          {
+            "field": "participants",
+            "type": "quantitative",
+            "title": "Estimated participants",
+            "format": ","
+          },
+          {
+            "field": "measure",
+            "title": "Definition"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 7,
+        "fontWeight": 700,
+        "fontSize": 12
+      },
+      "encoding": {
+        "y": {
+          "field": "group",
+          "type": "nominal",
+          "sort": [
+            "Women",
+            "Men"
+          ]
+        },
+        "x": {
+          "field": "participants",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "participants",
+          "type": "quantitative",
+          "format": ",d"
+        },
+        "color": {
+          "value": "#31505c"
+        }
+      }
+    }
+  ],
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json"
+}

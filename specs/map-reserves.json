@@ -1,0 +1,142 @@
+{
+  "background": null,
+  "config": {
+    "font": "DM Sans",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#58727b",
+      "titleColor": "#47656c",
+      "gridColor": "#e8eeee",
+      "domain": false,
+      "tickColor": "#dbe5e4",
+      "labelFontSize": 11,
+      "titleFontSize": 11
+    },
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#59757c",
+      "titleColor": "#486c73",
+      "orient": "bottom"
+    },
+    "text": {
+      "font": "DM Sans"
+    },
+    "range": {
+      "category": [
+        "#187d89",
+        "#e7a078",
+        "#55a6a2",
+        "#9a94c5",
+        "#ba728d"
+      ]
+    }
+  },
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "height": 440,
+  "projection": {
+    "type": "mercator",
+    "center": [
+      133,
+      -27
+    ],
+    "scale": 610
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.id == '036' || datum.id == 36"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": "#dbe8e5",
+        "stroke": "#9cb5b6",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "data": {
+        "url": "data/reserves.csv"
+      },
+      "transform": [],
+      "mark": {
+        "type": "circle",
+        "stroke": "white",
+        "strokeWidth": 1.5,
+        "opacity": 0.94
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "size": {
+          "value": 110
+        },
+        "color": {
+          "field": "state",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "NSW",
+              "WA",
+              "QLD",
+              "SA",
+              "VIC"
+            ],
+            "range": [
+              "#187d89",
+              "#e7a078",
+              "#55a6a2",
+              "#9a94c5",
+              "#ba728d"
+            ]
+          },
+          "legend": {
+            "orient": "bottom",
+            "title": null,
+            "columns": 5
+          }
+        },
+        "tooltip": [
+          {
+            "field": "name",
+            "type": "nominal",
+            "title": "Reserve"
+          },
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "year",
+            "type": "quantitative",
+            "title": "Dedicated"
+          }
+        ]
+      }
+    }
+  ],
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json"
+}

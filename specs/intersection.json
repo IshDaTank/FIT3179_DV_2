@@ -1,0 +1,191 @@
+{
+  "background": null,
+  "config": {
+    "font": "DM Sans",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#58727b",
+      "titleColor": "#47656c",
+      "gridColor": "#e8eeee",
+      "domain": false,
+      "tickColor": "#dbe5e4",
+      "labelFontSize": 11,
+      "titleFontSize": 11
+    },
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#59757c",
+      "titleColor": "#486c73"
+    },
+    "text": {
+      "font": "DM Sans"
+    },
+    "range": {
+      "category": [
+        "#187d89",
+        "#e7a078",
+        "#55a6a2",
+        "#9a94c5",
+        "#ba728d"
+      ]
+    }
+  },
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "height": 230,
+  "data": {
+    "values": [
+      {
+        "venue": "Bells Beach",
+        "category": "National reserve list",
+        "present": 0
+      },
+      {
+        "venue": "Bells Beach",
+        "category": "2026 tour stop",
+        "present": 1
+      },
+      {
+        "venue": "Margaret River",
+        "category": "National reserve list",
+        "present": 1
+      },
+      {
+        "venue": "Margaret River",
+        "category": "2026 tour stop",
+        "present": 1
+      },
+      {
+        "venue": "Snapper Rocks / Gold Coast",
+        "category": "National reserve list",
+        "present": 2
+      },
+      {
+        "venue": "Snapper Rocks / Gold Coast",
+        "category": "2026 tour stop",
+        "present": 1
+      }
+    ]
+  },
+  "transform": [
+    {
+      "calculate": "datum.category === '2026 tour stop' ? 'Event venue' : datum.present === 0 ? 'Not listed in this register' : datum.present === 2 ? 'Broader Gold Coast area overlap' : 'Exact name on reserve register'",
+      "as": "relation"
+    },
+    {
+      "calculate": "datum.present === 0 ? '—' : datum.present === 2 ? '◯' : '●'",
+      "as": "marker"
+    }
+  ],
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": 365,
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "fill": "#f0f6f5",
+        "stroke": "#ffffff",
+        "strokeWidth": 5
+      },
+      "encoding": {
+        "x": {
+          "field": "category",
+          "type": "nominal",
+          "sort": [
+            "National reserve list",
+            "2026 tour stop"
+          ],
+          "axis": {
+            "title": null,
+            "labelAngle": 0,
+            "labelLimit": 190
+          }
+        },
+        "y": {
+          "field": "venue",
+          "type": "nominal",
+          "sort": [
+            "Bells Beach",
+            "Margaret River",
+            "Snapper Rocks / Gold Coast"
+          ],
+          "axis": {
+            "title": null,
+            "labelLimit": 200
+          }
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 28,
+        "fontWeight": 700
+      },
+      "encoding": {
+        "x": {
+          "field": "category",
+          "type": "nominal",
+          "sort": [
+            "National reserve list",
+            "2026 tour stop"
+          ],
+          "axis": {
+            "title": null,
+            "labelAngle": 0,
+            "labelLimit": 190
+          }
+        },
+        "y": {
+          "field": "venue",
+          "type": "nominal",
+          "sort": [
+            "Bells Beach",
+            "Margaret River",
+            "Snapper Rocks / Gold Coast"
+          ],
+          "axis": {
+            "title": null,
+            "labelLimit": 200
+          }
+        },
+        "text": {
+          "field": "marker",
+          "type": "nominal"
+        },
+        "color": {
+          "condition": [
+            {
+              "test": "datum.present === 2",
+              "value": "#bd784a"
+            },
+            {
+              "test": "datum.present === 1",
+              "value": "#157c88"
+            }
+          ],
+          "value": "#9faead"
+        },
+        "tooltip": [
+          {
+            "field": "venue"
+          },
+          {
+            "field": "category"
+          },
+          {
+            "field": "relation",
+            "title": "Relationship"
+          }
+        ]
+      }
+    }
+  ]
+}

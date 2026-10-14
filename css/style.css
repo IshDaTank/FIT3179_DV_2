@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+:root{--navy:#071d29;--ink:#102d3b;--muted:#55717a;--teal:#157c88;--cyan:#55d3d5;--cream:#f7faf8;--line:#dbe5e4;--sand:#f1ebe2;--orange:#df8567}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.65 'DM Sans',sans-serif}a{color:inherit}button{font:inherit;cursor:pointer}h1,h2,h3,h4,p{margin:0}h1,h2,h3{font-family:Manrope,sans-serif;letter-spacing:-.045em;line-height:1.15}h1{font-size:clamp(3.4rem,8.2vw,7.8rem);font-weight:800}h2{font-size:clamp(2.2rem,4.5vw,4rem);font-weight:800}h3{font-size:1.15rem;letter-spacing:-.025em}p{max-width:65ch}.container{width:min(1120px,calc(100% - 52px));margin:auto}.topbar{display:flex;justify-content:space-between;align-items:center;padding:22px 0;border-bottom:1px solid #ffffff32;gap:16px}.brand{font-family:Manrope,sans-serif;font-size:.9rem;font-weight:800;letter-spacing:.11em}.navlinks{display:flex;gap:25px;font-size:.75rem;text-transform:uppercase;letter-spacing:.11em}.navlinks a{text-decoration:none;color:#dce8e8}.navlinks a:hover{color:var(--cyan)}.hero{background:radial-gradient(ellipse at 85% 62%,#155564 0%,transparent 57%),linear-gradient(130deg,#071d29 12%,#0c3441 100%);color:white;position:relative;overflow:hidden}.hero:after{content:'';position:absolute;right:-18%;bottom:-250px;width:920px;height:500px;border:75px solid #58cdd022;border-radius:50%;transform:rotate(-19deg);pointer-events:none}.hero-body{padding:100px 0 102px;position:relative;z-index:1}.eyebrow{font-size:.75rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:19px}.hero .eyebrow{color:#83d8da}.hero h1{max-width:850px}.hero h1 em{color:#71d5d6;font-style:normal}.hero .lede{font-size:1.17rem;line-height:1.7;margin-top:28px;color:#d1e1e2;max-width:640px}.hero-footer{display:flex;flex-wrap:wrap;gap:28px;margin-top:65px}.hero-stat{border-left:2px solid #55d3d5;padding-left:17px}.hero-stat strong{display:block;font:800 2.2rem Manrope,sans-serif;line-height:1.2}.hero-stat span{display:block;color:#accbd1;font-size:.78rem}.chapter{padding:106px 0 115px}.chapter.alt{background:#fff}.chapter.dark{background:#092532;color:white}.chapter-head{display:grid;grid-template-columns:1fr 1fr;gap:55px;margin-bottom:48px;align-items:end}.chapter-head p{color:var(--muted);font-size:1.01rem}.dark .chapter-head p{color:#bbd0d2}.chapter-tag{display:flex;align-items:center;gap:12px;font-size:.75rem;font-weight:800;letter-spacing:.17em;text-transform:uppercase;margin-bottom:22px;color:var(--teal)}.dark .chapter-tag{color:#6ed3d3}.chapter-tag:before{content:'';width:28px;height:2px;background:currentColor}.chart-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:22px}.chart-card{grid-column:span 6;background:#fff;border:1px solid var(--line);border-radius:10px;padding:28px 27px;min-width:0;box-shadow:0 8px 28px #12383b08}.chart-card.full{grid-column:span 12}.chart-card.third{grid-column:span 4}.alt .chart-card{background:#f8faf9}.dark .chart-card{background:#113642;border-color:#28505b;color:white;box-shadow:none}.chart-num{font-size:.65rem;color:var(--teal);font-weight:800;letter-spacing:.17em;text-transform:uppercase}.dark .chart-num{color:#6ed3d3}.chart-card h3{margin:7px 0 7px}.chart-card .desc{font-size:.83rem;color:var(--muted);min-height:42px}.dark .chart-card .desc{color:#b2cdd0}.viz{width:100%;min-height:235px;margin:18px 0 9px;overflow:hidden}.viz.large{min-height:420px}.chart-card .insight{border-top:1px solid var(--line);padding-top:16px;margin-top:11px;font-size:.85rem;max-width:none;line-height:1.55}.dark .insight{border-top-color:#28505b}.insight b{color:var(--teal)}.dark .insight b{color:#79dedc}.narrative{padding:26px 31px;background:#e5f1ee;border-left:4px solid var(--teal);border-radius:0 7px 7px 0;margin:30px 0 0;font-size:1rem;max-width:none}.dark .narrative{background:#17414a;color:#e3f3f2;border-color:#6ed3d3}.source-line{display:block;font-size:.72rem;color:var(--muted);margin-top:12px}.dark .source-line{color:#9ebec1}.source-line a{text-decoration:underline;text-decoration-color:#96bbbb}.pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}.pill{font-size:.75rem;border:1px solid #b8ccce;border-radius:100px;padding:7px 13px;color:var(--ink);background:transparent}.pill.active{background:var(--teal);border-color:var(--teal);color:white}.dark .pill{color:#e1f2f1}.dark .pill.active{background:#5cbdc0;color:#092532}.big-quote{font:700 clamp(1.5rem,2.7vw,2.5rem)/1.35 Manrope,sans-serif;letter-spacing:-.04em;max-width:900px;margin:30px 0}.footer{background:#051924;color:#a6c1c7;padding:65px 0;font-size:.83rem}.footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px}.footer h3{color:white;margin-bottom:16px}.footer a{color:#9ddfe0}.footer ul{padding-left:18px}.vega-actions{display:none!important}.vega-embed{width:100%}.vega-embed summary{display:none}.notice{border:1px solid #c5d9d6;background:#f0f7f5;padding:14px 17px;border-radius:8px;color:#3a686b;font-size:.83rem;margin-top:15px}.dark .notice{background:#163946;border-color:#32616a;color:#b6d9d8}@media(max-width:850px){.chapter-head{grid-template-columns:1fr;gap:18px}.chart-card,.chart-card.third{grid-column:span 12}.hero-body{padding:80px 0}.chapter{padding:72px 0}.footer-grid{grid-template-columns:1fr}.navlinks{display:none}}@media(max-width:500px){.container{width:min(100% - 30px,1120px)}.chart-card{padding:21px 14px}.hero-footer{gap:19px}.hero-stat strong{font-size:1.7rem}}
+/* Wave chapter — matching all other 12-column sections */
+.wave-section{background:#eaf2f0}.wave-section .chart-card{background:#fff}.data-status{background:#dceae8;border-left:3px solid #157c88;margin:-14px 0 24px;padding:12px 17px;border-radius:3px;color:#23565e;font-size:.81rem}.data-status.ready{background:#e1f2ec}.data-status.pending{background:#fff4e6;border-color:#ca855a;color:#745439}.empty-chart{padding:70px 25px;text-align:center;border:1px dashed #bacdcf;background:#f8faf9;border-radius:8px;color:#5a737b;font-size:.85rem;max-width:unset}.viz svg{max-width:100%;height:auto}.chapter-head>p{min-width:0}.chart-card{display:flex;flex-direction:column}.chart-card .viz{flex:1}.chart-card .insight{margin-top:auto}.topbar a:focus-visible,.pill:focus-visible{outline:3px solid #eeaa84;outline-offset:3px}
+
+/* Focused destination comparison chapter: equal cards, uniform reading rhythm */
+.destination-profiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:24px}.destination-profile{padding:29px 25px;background:#f1f7f5;border:1px solid #d4e5e2;border-top:4px solid #157c88;border-radius:8px;min-width:0;display:flex;flex-direction:column;align-items:start;gap:12px}.destination-profile h3{font-size:1.45rem}.destination-profile p{font-size:.88rem;line-height:1.7;color:#466670;max-width:none;flex:1}.profile-number{font-size:.66rem;font-weight:800;letter-spacing:.16em;color:#157c88}.profile-tag{font-size:.7rem;font-weight:700;border-radius:50px;background:#dcece9;color:#185b66;padding:7px 11px}.destinations-section .narrative{margin-top:28px}.chart-card .desc{min-height:0;margin-bottom:8px}.chart-card .insight{margin-top:18px}.chapter:target{scroll-margin-top:10px}@media(max-width:850px){.destination-profiles{grid-template-columns:1fr}}
+
+/* Accessibility, responsive charts and presentation polish */
+.skip-link{position:absolute;left:15px;top:-80px;z-index:100;background:#fff;color:#08313b;padding:12px 18px;border-radius:5px;font-weight:700}
+.skip-link:focus{top:12px}
+.chart-card:focus-within{outline:2px solid #a1cdd0;outline-offset:3px}
+.vega-embed svg{display:block;margin:auto;max-width:100%}
+.chart-card .source-line{overflow-wrap:anywhere}
+.chart-card .insight{line-height:1.65}
+.hero-stat span{max-width:20ch}
+@media(max-width:1100px){.navlinks{gap:12px;font-size:.66rem}.container{width:min(100% - 40px,1120px)}}
+@media(max-width:700px){.chart-card,.chart-card.full{grid-column:span 12}.chart-card{padding:23px 17px}.chapter-head{margin-bottom:28px}.hero h1{font-size:clamp(2.9rem,11vw,5.5rem)}.viz{overflow-x:auto;overflow-y:hidden}.hero-footer{margin-top:42px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Final HD presentation pass: consistent full-width chart hierarchy and readable labels. */
+.chart-card.full{grid-column:1/-1;}
+.chart-card{overflow:hidden;}
+.chart-card h3{font-size:clamp(1.15rem,1.55vw,1.38rem);line-height:1.32;letter-spacing:-.022em;}
+.chart-card .desc{line-height:1.65;max-width:75ch;}
+.chart-card .insight{max-width:none;}
+.viz{min-height:265px;}
+.chart-card.full .viz{min-height:305px;}
+.chart-card.full .viz.large{min-height:440px;}
+.chapter-head p{max-width:58ch;}
+.chart-grid{align-items:stretch;}
+.navlinks{flex-wrap:wrap;justify-content:flex-end;}
+@media(max-width:850px){.chart-grid{gap:18px}.viz{min-height:240px}.chart-card.full .viz.large{min-height:330px}}
+
+/* Uniform interpretive analysis modules — used consistently below each chart */
+.analysis-panel{margin-top:22px;padding:21px 23px 19px;border:1px solid #cfe1de;border-left:4px solid #157c88;background:#eef6f3;border-radius:7px;display:grid;gap:9px;max-width:none;}
+.analysis-label{font:800 .67rem/1.35 Manrope,sans-serif;letter-spacing:.16em;color:#126874;}
+.analysis-copy,.analysis-caveat{max-width:78ch;margin:0;overflow-wrap:break-word;}
+.analysis-copy{font-size:.9rem;line-height:1.76;color:#203f49;}
+.analysis-caveat{border-top:1px solid #d0e2df;padding-top:9px;font-size:.78rem;line-height:1.62;color:#506c72;}
+.analysis-caveat strong{font-weight:700;color:#315b62;}
+.dark .analysis-panel{background:#183f47;border-color:#3a6770;border-left-color:#75d4d0;}
+.dark .analysis-label{color:#8be0db;}
+.dark .analysis-copy{color:#eff8f7;}
+.dark .analysis-caveat{color:#c3d9dc;border-color:#315b65;}
+.dark .analysis-caveat strong{color:#e4f5f2;}
+.chart-card .analysis-panel{margin-top:auto;}
+.chart-card .viz{flex:0 0 auto;}
+.chart-card h3{max-width:35ch;}
+.chart-card .desc{max-width:80ch;min-height:0;margin-top:5px;}
+@media(max-width:700px){.analysis-panel{padding:18px 16px}.analysis-copy{font-size:.86rem}}
+
+/* Chart heading simplification: chart titles remain; redundant labels and summaries removed. */
+.chart-card h3{margin:0 0 18px;max-width:65ch;font-size:clamp(1.16rem,1.6vw,1.45rem)}
+.chart-card .viz{margin-top:6px}
+
+/* FINAL ANNOTATION + TYPOGRAPHIC RHYTHM — FIT3179 DV2 */
+:root{--readable-width:68ch;--panel-edge:#167b85}
+.chapter{padding-block:clamp(64px,7vw,106px)}
+.chapter-head{align-items:center;gap:clamp(20px,4vw,55px)}
+.chapter-head p{font-size:1rem;line-height:1.78;max-width:var(--readable-width)}
+.chart-grid{gap:24px;align-items:stretch}
+.chart-card{padding:clamp(20px,2.5vw,30px);border-radius:12px;min-width:0}
+.chart-card h3{font:800 clamp(1.17rem,1.7vw,1.44rem)/1.36 Manrope,sans-serif;letter-spacing:-.026em;max-width:50ch;margin:0 0 18px}
+.chart-card .viz{margin:0 0 13px;min-height:260px;overflow:hidden}
+.chart-card .viz.large{min-height:385px}
+.chart-annotation{display:grid;grid-template-columns:minmax(70px,auto) minmax(120px,auto) 1fr;align-items:center;gap:12px;padding:14px 17px;background:#eaf4f2;border:1px solid #cde3de;border-radius:8px;margin:10px 0 0;max-width:none}
+.annotation-index{font:800 .65rem/1.3 Manrope,sans-serif;letter-spacing:.12em;color:#377079}
+.annotation-value{font:800 .92rem/1.4 Manrope,sans-serif;color:#095965}
+.annotation-text{font-size:.82rem;line-height:1.55;color:#385e66}
+.analysis-panel{margin-top:15px!important;background:#f5f9f7;border-color:#dce8e5;padding:17px 20px;gap:8px}
+.analysis-label{letter-spacing:.13em;font-size:.66rem}
+.analysis-copy{font-size:.9rem;line-height:1.75;max-width:var(--readable-width)}
+.analysis-caveat{font-size:.76rem;line-height:1.6}
+.narrative{margin-top:30px;padding:23px 27px;line-height:1.75}
+.source-line{margin-top:12px;line-height:1.6}
+@media(max-width:850px){.chart-annotation{grid-template-columns:1fr 1fr}.annotation-text{grid-column:1/-1}}
+@media(max-width:520px){.chart-annotation{grid-template-columns:1fr;gap:4px;padding:13px}.annotation-text{grid-column:auto}.chart-card .viz.large{min-height:300px}.chart-card{padding:20px 15px}}
+
+/* Evidence-focused final presentation */
+.chart-card { min-width:0; overflow:hidden; }
+.chart-card h3 {max-width:46ch;line-height:1.28;letter-spacing:-.025em;}
+.chart-card .viz {max-width:100%;overflow-x:auto;}
+.chart-annotation {min-width:0;}
+.analysis-copy {max-width:76ch;line-height:1.7;}
+#tour .chart-grid {align-items:stretch;}
+#tour .chart-card.full {grid-column:1/-1;}
+@media(max-width:800px){.chart-card h3{font-size:1.25rem}.chart-annotation{flex-wrap:wrap;gap:10px}.chart-card .viz{min-height:245px}}

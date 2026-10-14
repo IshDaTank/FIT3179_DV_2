@@ -1,0 +1,114 @@
+{
+  "background": null,
+  "config": {
+    "font": "DM Sans",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#58727b",
+      "titleColor": "#47656c",
+      "gridColor": "#e8eeee",
+      "domain": false,
+      "tickColor": "#dbe5e4",
+      "labelFontSize": 11,
+      "titleFontSize": 11
+    },
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#59757c",
+      "titleColor": "#486c73",
+      "orient": "bottom"
+    },
+    "text": {
+      "font": "DM Sans"
+    },
+    "range": {
+      "category": [
+        "#187d89",
+        "#e7a078",
+        "#55a6a2",
+        "#9a94c5",
+        "#ba728d"
+      ]
+    }
+  },
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "height": 275,
+  "projection": {
+    "type": "mercator",
+    "center": [
+      133,
+      -27
+    ],
+    "scale": 610
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.id == '036' || datum.id == 36"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": "#dbe8e5",
+        "stroke": "#9cb5b6",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "data": {
+        "url": "data/reserve_grid_2deg.geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#f5faf8",
+        "strokeWidth": 1.4,
+        "opacity": 0.93
+      },
+      "encoding": {
+        "color": {
+          "field": "properties.count",
+          "type": "quantitative",
+          "scale": {
+            "scheme": "tealblues"
+          },
+          "legend": {
+            "title": "Reserves / grid cell"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "properties.cell",
+            "type": "nominal",
+            "title": "Geographic bin"
+          },
+          {
+            "field": "properties.count",
+            "type": "quantitative",
+            "title": "Reserves"
+          }
+        ]
+      }
+    }
+  ],
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json"
+}

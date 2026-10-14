@@ -1,0 +1,147 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "background": null,
+  "config": {
+    "font": "DM Sans",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#58727b",
+      "titleColor": "#47656c",
+      "gridColor": "#e8eeee",
+      "domain": false,
+      "tickColor": "#dbe5e4",
+      "labelFontSize": 11,
+      "titleFontSize": 11
+    },
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#59757c",
+      "titleColor": "#486c73",
+      "orient": "bottom"
+    },
+    "text": {
+      "font": "DM Sans"
+    },
+    "range": {
+      "category": [
+        "#187d89",
+        "#e7a078",
+        "#55a6a2",
+        "#9a94c5",
+        "#ba728d"
+      ]
+    }
+  },
+  "height": 380,
+  "projection": {
+    "type": "equalEarth"
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#e3eeed",
+        "stroke": "#adc4c6",
+        "strokeWidth": 0.45
+      }
+    },
+    {
+      "data": {
+        "url": "data/world_tour_announced_2026.csv"
+      },
+      "mark": {
+        "type": "circle",
+        "filled": true,
+        "opacity": 0.9,
+        "stroke": "white",
+        "strokeWidth": 1.6
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "size": {
+          "condition": {
+            "test": "datum.country === \"Australia\"",
+            "value": 270
+          },
+          "value": 90
+        },
+        "color": {
+          "condition": {
+            "test": "datum.country === \"Australia\"",
+            "value": "#d66f52"
+          },
+          "value": "#087d89"
+        },
+        "tooltip": [
+          {
+            "field": "stop",
+            "type": "ordinal",
+            "title": "Announced stop"
+          },
+          {
+            "field": "venue",
+            "title": "Venue"
+          },
+          {
+            "field": "country",
+            "title": "Country"
+          },
+          {
+            "field": "start",
+            "title": "Announced start"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "longitude": 130,
+            "latitude": -12,
+            "label": "AUSTRALIA \u00b7 3 STOPS"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "fill": "#b8563f",
+        "align": "center"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,299 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "background": null,
+  "config": {
+    "font": "DM Sans",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#58727b",
+      "titleColor": "#47656c",
+      "gridColor": "#e8eeee",
+      "domain": false,
+      "tickColor": "#dbe5e4",
+      "labelFontSize": 11,
+      "titleFontSize": 11
+    },
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#59757c",
+      "titleColor": "#486c73"
+    },
+    "text": {
+      "font": "DM Sans"
+    },
+    "range": {
+      "category": [
+        "#187d89",
+        "#e7a078",
+        "#55a6a2",
+        "#9a94c5",
+        "#ba728d"
+      ]
+    }
+  },
+  "spacing": 8,
+  "hconcat": [
+    {
+      "title": {
+        "text": "2006–2010",
+        "font": "Manrope",
+        "fontSize": 14,
+        "color": "#153e49",
+        "anchor": "middle"
+      },
+      "width": 230,
+      "height": 230,
+      "projection": {
+        "type": "mercator",
+        "center": [
+          133,
+          -27
+        ],
+        "scale": 315
+      },
+      "layer": [
+        {
+          "data": {
+            "url": "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json",
+            "format": {
+              "type": "topojson",
+              "feature": "countries"
+            }
+          },
+          "transform": [
+            {
+              "filter": "datum.id == '036' || datum.id == 36"
+            }
+          ],
+          "mark": {
+            "type": "geoshape",
+            "fill": "#e3eeeb",
+            "stroke": "#9bb6b7",
+            "strokeWidth": 0.8
+          }
+        },
+        {
+          "data": {
+            "url": "data/reserves.csv"
+          },
+          "transform": [
+            {
+              "filter": "datum.year >= 2006 && datum.year <= 2010"
+            }
+          ],
+          "mark": {
+            "type": "circle",
+            "size": 84,
+            "filled": true,
+            "stroke": "white",
+            "strokeWidth": 1.1,
+            "color": "#147e8a",
+            "opacity": 0.96
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "tooltip": [
+              {
+                "field": "name",
+                "title": "Surfing reserve"
+              },
+              {
+                "field": "state",
+                "title": "State"
+              },
+              {
+                "field": "year",
+                "title": "Dedication year"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "text": "2011–2015",
+        "font": "Manrope",
+        "fontSize": 14,
+        "color": "#153e49",
+        "anchor": "middle"
+      },
+      "width": 230,
+      "height": 230,
+      "projection": {
+        "type": "mercator",
+        "center": [
+          133,
+          -27
+        ],
+        "scale": 315
+      },
+      "layer": [
+        {
+          "data": {
+            "url": "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json",
+            "format": {
+              "type": "topojson",
+              "feature": "countries"
+            }
+          },
+          "transform": [
+            {
+              "filter": "datum.id == '036' || datum.id == 36"
+            }
+          ],
+          "mark": {
+            "type": "geoshape",
+            "fill": "#e3eeeb",
+            "stroke": "#9bb6b7",
+            "strokeWidth": 0.8
+          }
+        },
+        {
+          "data": {
+            "url": "data/reserves.csv"
+          },
+          "transform": [
+            {
+              "filter": "datum.year >= 2011 && datum.year <= 2015"
+            }
+          ],
+          "mark": {
+            "type": "circle",
+            "size": 84,
+            "filled": true,
+            "stroke": "white",
+            "strokeWidth": 1.1,
+            "color": "#147e8a",
+            "opacity": 0.96
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "tooltip": [
+              {
+                "field": "name",
+                "title": "Surfing reserve"
+              },
+              {
+                "field": "state",
+                "title": "State"
+              },
+              {
+                "field": "year",
+                "title": "Dedication year"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "text": "2016–2022",
+        "font": "Manrope",
+        "fontSize": 14,
+        "color": "#153e49",
+        "anchor": "middle"
+      },
+      "width": 230,
+      "height": 230,
+      "projection": {
+        "type": "mercator",
+        "center": [
+          133,
+          -27
+        ],
+        "scale": 315
+      },
+      "layer": [
+        {
+          "data": {
+            "url": "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json",
+            "format": {
+              "type": "topojson",
+              "feature": "countries"
+            }
+          },
+          "transform": [
+            {
+              "filter": "datum.id == '036' || datum.id == 36"
+            }
+          ],
+          "mark": {
+            "type": "geoshape",
+            "fill": "#e3eeeb",
+            "stroke": "#9bb6b7",
+            "strokeWidth": 0.8
+          }
+        },
+        {
+          "data": {
+            "url": "data/reserves.csv"
+          },
+          "transform": [
+            {
+              "filter": "datum.year >= 2016 && datum.year <= 2022"
+            }
+          ],
+          "mark": {
+            "type": "circle",
+            "size": 84,
+            "filled": true,
+            "stroke": "white",
+            "strokeWidth": 1.1,
+            "color": "#147e8a",
+            "opacity": 0.96
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "tooltip": [
+              {
+                "field": "name",
+                "title": "Surfing reserve"
+              },
+              {
+                "field": "state",
+                "title": "State"
+              },
+              {
+                "field": "year",
+                "title": "Dedication year"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "resolve": {
+    "scale": {
+      "color": "independent"
+    }
+  }
+}
